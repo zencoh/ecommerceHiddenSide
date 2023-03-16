@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
     const tagData = await Tag.findAll({
       include: [{model: Product}]
     });
-    // how do i include associated products with the findAll method
     res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
@@ -22,7 +21,6 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findByPk(req.params.id, {
-      // do i need to include productTag
       include: [{model: Product}]
     });
     if (!tagData) {
@@ -47,7 +45,6 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
-  // not sure if this is the right way to do this
   try {
     const tagData = await Tag.update(
       {tag_name: req.body.tag_name},
