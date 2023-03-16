@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
   try {
     const tagData = await Tag.findByPk(req.params.id, {
       // do i need to include productTag
-      include: [{model: ProductTag, through: Product}]
+      include: [{model: Product}]
     });
     if (!tagData) {
       res.status(404).json({ message: 'No tag found with this id!' });
@@ -49,11 +49,10 @@ router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   // not sure if this is the right way to do this
   try {
-    const tagData = await Tag.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    })
+    const tagData = await Tag.update(
+      {tag_name: req.body.tag_name},
+      {where: {id: req.params.id}}
+    )
     if (!tagData) {
       res.status(404).json({ message: 'No tag found with this id!' });
       return;
