@@ -20,4 +20,4 @@ To use this application, first you will create your database in a mysql shell an
 Thank you for investing your time in reading through my code and README. Since I am creating this application for a coding bootcamp I am not taking contributions at this time.
 
 ## Questions
-For any questions, please feel free to reach out to me on GitHub at [zencoh](https://github.com/zencoh). You can also reach me at chsoccer4@outlook.com.
+For any questions, please feel free to reach out to me on GitHub at [zencoh](https://github.com/zencoh). You can also reach me at chartkopp@outlook.com.
